@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hitch Server Manager</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="../js/hitch.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+        .font{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: lighter;
+        }
+        th, td {
+            border:1px solid rgba(0, 0, 0, 0.179);
+        }
+        .delete-server{
+            cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="w3-bar w3-black">
+            <a href="#" class="w3-bar-item w3-button">Home</a>
+            <a href="#" class="w3-bar-item w3-button">Link 1</a>
+            <a href="#" class="w3-bar-item w3-button">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        </div>
+          
+
+        <table class="font" style="padding: 1%;width: 100%;">
+            <tbody id="servers-socket">
+                <tr>
+                    <th colspan="5" style="background-color: aquamarine;">
+                        Socket Servers
+                    </th>
+                </tr>
+                <tr>
+                    <th>Delete</th>                    
+                    <th>
+                        Port
+                    </th>
+                    <th>
+                        Handlers
+                    </th>
+                    <th>
+                        Clients
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table class="font" style="padding: 1%;width: 100%;">
+            <tbody id="servers-http">
+                <th colspan="5" style="background-color: aquamarine;">
+                    HTTP Servers
+                </th>
+                <tr>
+                    <th>Delete</th>
+                    <th>
+                        Port
+                    </th>
+                    <th>
+                        Adapter
+                    </th>
+                    <th>
+                        HTTPS
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+
+<!--
+            <div class="w3-model" hidden>
+            <div class="w3-modal-content">
+                <div class="w3-bar">
+                    <h2>Hitch Login</h2>
+                    <div class="w3-bar-item">
+                        <label for="username">Username</label>
+                        <input id="username" type="username"> 
+                    </div>
+                    <div class="w3-bar-item">
+                        <label for="password"></label>
+                        <input id="password" type="password"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+        
+        <script>
+            
+            let managerPort = 4444;
+            let prefix      = "ws";
+            let hitchClient = new HitchClient(`${prefix}://${location.hostname}:${managerPort}/`);
+            
+            // Overrides the onOpen event
+            hitchClient.websocket.onopen = (e) => {
+                hitchClient.send("get_instances", {username: "admin", password: "password123"})
+            }
+
+            console.log(HitchGlobals)
+
+            hitchClient.addHandler("get_instances", (data, websocket)=>{
+
+                for (let [k, v] of Object.entries(data.socket)){
+                    //
+                    let handlers = "";
+                    for (let l of v.handlers){
+                        for (let [k2, v2] of Object.entries(l)){
+                            handlers += k2 + ": " + "<input disabled value=\"" + v2 + "\" style=\"width: 70%;\">" + "<br>";
+                        }
+                    }
+
+                    let clients = "";
+                    for (let [k3, v3] of Object.entries(v.clients)){
+                        clients += k3 + ": " + "<input disabled value=\"" + v3 + "\" style=\"width: 70%;\">" + "<br>";
+                    }
+
+                    $('#servers-socket').append(`<tr>
+                    <td class=\"w3-center delete-server\" id=\"${k}\">❌</td>
+                    <td>${k}</td>
+                    <td>${handlers}</td>
+                    <td>${clients}</td>
+                    </tr>
+                    `);
+                }
+
+                console.log(data.http)
+                for (let [k4, v4] of Object.entries(data.http)){
+
+                    let serverInfo = JSON.parse(v4);
+                    $('#servers-http').append(`<tr>
+                    <td class=\"w3-center delete-server\" id=\"${serverInfo.port}\">❌</td>
+                    <td>${serverInfo.port}</td>
+                    <td>${k4}</td>
+                    <td>${serverInfo.adapter}</td>
+                    <td>${serverInfo.https}</td>
+                    </tr>
+                    `);
+                }
+
+                $('.delete-server').on('click', (e) => {
+                    if (window.confirm(`Are you sure you want to delete the service running on port ${e.target.id}?`)){
+                        hitchClient.send("delete_service", {username: "admin", password: "password123", service_port: e.target.id});
+                        location.reload();
+                    }
+                })
+
+            })
+
+        </script>
+    </body>
+</html>
