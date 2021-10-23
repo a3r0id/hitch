@@ -6,7 +6,7 @@ from os.path import join as pjoin
 
 class HitchManager(object):
     def __init__(self, username, password, WS_adapter='127.0.0.1', WS_port=4444):
-        Macros.manager_server['server']   = Hitch(WS_adapter, WS_port, log=True, logName="manager.log")
+        Macros.manager_server['server']   = Hitch(WS_adapter, WS_port)
         Macros.manager_server['username'] = username
         Macros.manager_server['password'] = password
 

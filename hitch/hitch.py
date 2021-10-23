@@ -14,8 +14,6 @@ class Hitch(object):
         self,
         address="127.0.0.1",
         port=8440,
-        log=False,
-        logName="server.log",
         loggingLevel=20,
         server_max_size=9000000,
         server_ping_timeout=None,
@@ -31,16 +29,12 @@ class Hitch(object):
         self.config = dict(
             address=address,
             port=port,
-            log=log,
-            logName=logName,
             loggingLevel=loggingLevel,
             server_max_size=server_max_size,
             server_ping_timeout=server_ping_timeout,
             ssl=ssl_context
             )
 
-        if self.config['log']:
-            basicConfig(filename=self.config['logName'], level=self.config['loggingLevel'])
 
         # Starts new event loop
         self.loop = new_event_loop()

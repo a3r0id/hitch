@@ -1,0 +1,185 @@
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:websockets.protocol:server - state = CONNECTING
+DEBUG:websockets.protocol:server - event = connection_made(<_ProactorSocketTransport fd=1144>)
+DEBUG:websockets.protocol:server - event = data_received(<787 bytes>)
+DEBUG:websockets.server:server < GET / HTTP/1.1
+DEBUG:websockets.server:server < Headers([('Host', '127.0.0.1:4444'), ('Connection', 'Upgrade'), ('Pragma', 'no-cache'), ('Cache-Control', 'no-cache'), ('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'), ('Upgrade', 'websocket'), ('Origin', 'http://127.0.0.1:5500'), ('Sec-WebSocket-Version', '13'), ('Accept-Encoding', 'gzip, deflate, br'), ('Accept-Language', 'en-US,en;q=0.9'), ('Cookie', 'csrftoken=cmqTFNH4YBUg2RJUCCO6J6ie3vecVuj7JuYMbm9wmCeGez1bovAeq7twBaCu76kj; FCCDCF=[null,null,["[[],[],[],[],null,null,true]",1618275712385]]; __gads=ID=4ae92beb10c26667-220b69953dc70030:T=1618597690:RT=1618597690:S=ALNI_MZk2tcoVJVo7qGocnXgq8L5rXxbmA; _ga=GA1.4.2077077477.1580287956'), ('Sec-WebSocket-Key', '1+WcSKZ5DrTCfliIDnZZ2Q=='), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits')])
+DEBUG:websockets.server:server > HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:server > Headers([('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'YqytlKOv6N13fZ4Z7SGTZOTkcC8='), ('Sec-WebSocket-Extensions', 'permessage-deflate'), ('Date', 'Sat, 23 Oct 2021 21:46:30 GMT'), ('Server', 'Python/3.9 websockets/8.1')])
+DEBUG:websockets.protocol:server - state = OPEN
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"action": "init_event", "message": "Websocket Is Open"}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<104 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"username":"admin","password":"password123","action":"get_instances","id":"1635025590341","hasCallback":false}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"id": "1635025590341", "hasCallback": false, "action": "get_instances", "http": {"80": "{\\n    \\"port\\": 80,\\n    \\"adapter\\": \\"127.0.0.1\\",\\n    \\"https\\": false\\n}"}, "socket": {"8441": {"handlers": [{"name": "hello", "function": "<function hello at 0x000001E477B938B0>"}], "clients": {}}, "4444": {"handlers": [{"name": "get_instances", "function": "<function HitchManager.__init__.<locals>.get_instances_handler at 0x000001E477B93E50>"}, {"name": "delete_service", "function": "<function HitchManager.__init__.<locals>.delete_service at 0x000001E477BD0040>"}], "clients": {"ae999429-344a-11ec-8660-b42e9935f70c": "<hitch.client.Client object at 0x000001E477BCFE20>"}}}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\xbcP\xd5\xe0', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<10 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\xbcP\xd5\xe0', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: bc50d5e0
+DEBUG:websockets.protocol:server - event = data_received(<8 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - state = CLOSING
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = eof_received()
+DEBUG:websockets.protocol:server x half-closing TCP connection
+DEBUG:websockets.protocol:server - event = connection_lost(None)
+DEBUG:websockets.protocol:server - state = CLOSED
+DEBUG:websockets.protocol:server x code = 1001, reason = [no reason]
+DEBUG:websockets.protocol:server - state = CONNECTING
+DEBUG:websockets.protocol:server - event = connection_made(<_ProactorSocketTransport fd=1020>)
+DEBUG:websockets.protocol:server - event = data_received(<787 bytes>)
+DEBUG:websockets.server:server < GET / HTTP/1.1
+DEBUG:websockets.server:server < Headers([('Host', '127.0.0.1:4444'), ('Connection', 'Upgrade'), ('Pragma', 'no-cache'), ('Cache-Control', 'no-cache'), ('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'), ('Upgrade', 'websocket'), ('Origin', 'http://127.0.0.1:5500'), ('Sec-WebSocket-Version', '13'), ('Accept-Encoding', 'gzip, deflate, br'), ('Accept-Language', 'en-US,en;q=0.9'), ('Cookie', 'csrftoken=cmqTFNH4YBUg2RJUCCO6J6ie3vecVuj7JuYMbm9wmCeGez1bovAeq7twBaCu76kj; FCCDCF=[null,null,["[[],[],[],[],null,null,true]",1618275712385]]; __gads=ID=4ae92beb10c26667-220b69953dc70030:T=1618597690:RT=1618597690:S=ALNI_MZk2tcoVJVo7qGocnXgq8L5rXxbmA; _ga=GA1.4.2077077477.1580287956'), ('Sec-WebSocket-Key', 'r/wfJ+N3Kq4Kk0bbs6R4/g=='), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits')])
+DEBUG:websockets.server:server > HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:server > Headers([('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'Jd8nKy6z/kfp1iGnStVgRqDjWGE='), ('Sec-WebSocket-Extensions', 'permessage-deflate'), ('Date', 'Sat, 23 Oct 2021 21:46:52 GMT'), ('Server', 'Python/3.9 websockets/8.1')])
+DEBUG:websockets.protocol:server - state = OPEN
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"action": "init_event", "message": "Websocket Is Open"}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<104 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"username":"admin","password":"password123","action":"get_instances","id":"1635025612564","hasCallback":false}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"id": "1635025612564", "hasCallback": false, "action": "get_instances", "http": {"80": "{\\n    \\"port\\": 80,\\n    \\"adapter\\": \\"127.0.0.1\\",\\n    \\"https\\": false\\n}"}, "socket": {"8441": {"handlers": [{"name": "hello", "function": "<function hello at 0x000001E477B938B0>"}], "clients": {}}, "4444": {"handlers": [{"name": "get_instances", "function": "<function HitchManager.__init__.<locals>.get_instances_handler at 0x000001E477B93E50>"}, {"name": "delete_service", "function": "<function HitchManager.__init__.<locals>.delete_service at 0x000001E477BD0040>"}], "clients": {"bbdc4229-344a-11ec-9a2e-b42e9935f70c": "<hitch.client.Client object at 0x000001E477BFD0D0>"}}}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<8 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - state = CLOSING
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = eof_received()
+DEBUG:websockets.protocol:server x half-closing TCP connection
+DEBUG:websockets.protocol:server - event = connection_lost(None)
+DEBUG:websockets.protocol:server - state = CLOSED
+DEBUG:websockets.protocol:server x code = 1001, reason = [no reason]
+DEBUG:websockets.protocol:server - state = CONNECTING
+DEBUG:websockets.protocol:server - event = connection_made(<_ProactorSocketTransport fd=1180>)
+DEBUG:websockets.protocol:server - event = data_received(<787 bytes>)
+DEBUG:websockets.server:server < GET / HTTP/1.1
+DEBUG:websockets.server:server < Headers([('Host', '127.0.0.1:4444'), ('Connection', 'Upgrade'), ('Pragma', 'no-cache'), ('Cache-Control', 'no-cache'), ('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'), ('Upgrade', 'websocket'), ('Origin', 'http://127.0.0.1:5500'), ('Sec-WebSocket-Version', '13'), ('Accept-Encoding', 'gzip, deflate, br'), ('Accept-Language', 'en-US,en;q=0.9'), ('Cookie', 'csrftoken=cmqTFNH4YBUg2RJUCCO6J6ie3vecVuj7JuYMbm9wmCeGez1bovAeq7twBaCu76kj; FCCDCF=[null,null,["[[],[],[],[],null,null,true]",1618275712385]]; __gads=ID=4ae92beb10c26667-220b69953dc70030:T=1618597690:RT=1618597690:S=ALNI_MZk2tcoVJVo7qGocnXgq8L5rXxbmA; _ga=GA1.4.2077077477.1580287956'), ('Sec-WebSocket-Key', 's3XO86XzYPhXFFTfFNuJlQ=='), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits')])
+DEBUG:websockets.server:server > HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:server > Headers([('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', '4O4MIu1dyh/Zwv1+gnjmRZrydwg='), ('Sec-WebSocket-Extensions', 'permessage-deflate'), ('Date', 'Sat, 23 Oct 2021 21:46:53 GMT'), ('Server', 'Python/3.9 websockets/8.1')])
+DEBUG:websockets.protocol:server - state = OPEN
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"action": "init_event", "message": "Websocket Is Open"}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<103 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"username":"admin","password":"password123","action":"get_instances","id":"1635025613339","hasCallback":false}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"id": "1635025613339", "hasCallback": false, "action": "get_instances", "http": {"80": "{\\n    \\"port\\": 80,\\n    \\"adapter\\": \\"127.0.0.1\\",\\n    \\"https\\": false\\n}"}, "socket": {"8441": {"handlers": [{"name": "hello", "function": "<function hello at 0x000001E477B938B0>"}], "clients": {}}, "4444": {"handlers": [{"name": "get_instances", "function": "<function HitchManager.__init__.<locals>.get_instances_handler at 0x000001E477B93E50>"}, {"name": "delete_service", "function": "<function HitchManager.__init__.<locals>.delete_service at 0x000001E477BD0040>"}], "clients": {"bc52419e-344a-11ec-b8ae-b42e9935f70c": "<hitch.client.Client object at 0x000001E477BFD7C0>"}}}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<8 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - state = CLOSING
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = eof_received()
+DEBUG:websockets.protocol:server x half-closing TCP connection
+DEBUG:websockets.protocol:server - event = connection_lost(None)
+DEBUG:websockets.protocol:server - state = CLOSED
+DEBUG:websockets.protocol:server x code = 1001, reason = [no reason]
+DEBUG:websockets.protocol:server - state = CONNECTING
+DEBUG:websockets.protocol:server - event = connection_made(<_ProactorSocketTransport fd=1172>)
+DEBUG:websockets.protocol:server - event = data_received(<787 bytes>)
+DEBUG:websockets.server:server < GET / HTTP/1.1
+DEBUG:websockets.server:server < Headers([('Host', '127.0.0.1:4444'), ('Connection', 'Upgrade'), ('Pragma', 'no-cache'), ('Cache-Control', 'no-cache'), ('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'), ('Upgrade', 'websocket'), ('Origin', 'http://127.0.0.1:5500'), ('Sec-WebSocket-Version', '13'), ('Accept-Encoding', 'gzip, deflate, br'), ('Accept-Language', 'en-US,en;q=0.9'), ('Cookie', 'csrftoken=cmqTFNH4YBUg2RJUCCO6J6ie3vecVuj7JuYMbm9wmCeGez1bovAeq7twBaCu76kj; FCCDCF=[null,null,["[[],[],[],[],null,null,true]",1618275712385]]; __gads=ID=4ae92beb10c26667-220b69953dc70030:T=1618597690:RT=1618597690:S=ALNI_MZk2tcoVJVo7qGocnXgq8L5rXxbmA; _ga=GA1.4.2077077477.1580287956'), ('Sec-WebSocket-Key', 'tNcy6kCgzOngZN4CLDjozQ=='), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits')])
+DEBUG:websockets.server:server > HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:server > Headers([('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'xMd9gGNWx6LSdJR2jeomw7LOf3w='), ('Sec-WebSocket-Extensions', 'permessage-deflate'), ('Date', 'Sat, 23 Oct 2021 21:46:53 GMT'), ('Server', 'Python/3.9 websockets/8.1')])
+DEBUG:websockets.protocol:server - state = OPEN
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"action": "init_event", "message": "Websocket Is Open"}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<104 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"username":"admin","password":"password123","action":"get_instances","id":"1635025613935","hasCallback":false}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"id": "1635025613935", "hasCallback": false, "action": "get_instances", "http": {"80": "{\\n    \\"port\\": 80,\\n    \\"adapter\\": \\"127.0.0.1\\",\\n    \\"https\\": false\\n}"}, "socket": {"8441": {"handlers": [{"name": "hello", "function": "<function hello at 0x000001E477B938B0>"}], "clients": {}}, "4444": {"handlers": [{"name": "get_instances", "function": "<function HitchManager.__init__.<locals>.get_instances_handler at 0x000001E477B93E50>"}, {"name": "delete_service", "function": "<function HitchManager.__init__.<locals>.delete_service at 0x000001E477BD0040>"}], "clients": {"bcad5a1e-344a-11ec-bed3-b42e9935f70c": "<hitch.client.Client object at 0x000001E477BFD580>"}}}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'S\xf7-\xd0', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<10 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'S\xf7-\xd0', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 53f72dd0
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b';5\x89\x16', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<10 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b';5\x89\x16', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 3b358916
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\xbcKq\xbf', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<10 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\xbcKq\xbf', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: bc4b71bf
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\xb1\xdc\xca\x8e', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<10 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\xb1\xdc\xca\x8e', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: b1dcca8e
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'*\x8bpZ', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<10 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'*\x8bpZ', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 2a8b705a
+DEBUG:websockets.protocol:server - event = data_received(<51 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"username":"admin","password":"password123","service_port":"8441","action":"delete_service","id":"1635025719969","hasCallback":false}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<8 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - state = CLOSING
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = eof_received()
+DEBUG:websockets.protocol:server x half-closing TCP connection
+DEBUG:websockets.protocol:server - event = connection_lost(None)
+DEBUG:websockets.protocol:server - state = CLOSED
+DEBUG:websockets.protocol:server x code = 1001, reason = [no reason]
+DEBUG:websockets.protocol:server - state = CONNECTING
+DEBUG:websockets.protocol:server - event = connection_made(<_ProactorSocketTransport fd=1180>)
+DEBUG:websockets.protocol:server - event = data_received(<787 bytes>)
+DEBUG:websockets.server:server < GET / HTTP/1.1
+DEBUG:websockets.server:server < Headers([('Host', '127.0.0.1:4444'), ('Connection', 'Upgrade'), ('Pragma', 'no-cache'), ('Cache-Control', 'no-cache'), ('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'), ('Upgrade', 'websocket'), ('Origin', 'http://127.0.0.1:5500'), ('Sec-WebSocket-Version', '13'), ('Accept-Encoding', 'gzip, deflate, br'), ('Accept-Language', 'en-US,en;q=0.9'), ('Cookie', 'csrftoken=cmqTFNH4YBUg2RJUCCO6J6ie3vecVuj7JuYMbm9wmCeGez1bovAeq7twBaCu76kj; FCCDCF=[null,null,["[[],[],[],[],null,null,true]",1618275712385]]; __gads=ID=4ae92beb10c26667-220b69953dc70030:T=1618597690:RT=1618597690:S=ALNI_MZk2tcoVJVo7qGocnXgq8L5rXxbmA; _ga=GA1.4.2077077477.1580287956'), ('Sec-WebSocket-Key', 'f6xw0yj9MrvycL5/7YihvQ=='), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits')])
+DEBUG:websockets.server:server > HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:server > Headers([('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'h224Sliys4KOqwhSGsvch1m4i3U='), ('Sec-WebSocket-Extensions', 'permessage-deflate'), ('Date', 'Sat, 23 Oct 2021 21:48:40 GMT'), ('Server', 'Python/3.9 websockets/8.1')])
+DEBUG:websockets.protocol:server - state = OPEN
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"action": "init_event", "message": "Websocket Is Open"}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<102 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"username":"admin","password":"password123","action":"get_instances","id":"1635025720163","hasCallback":false}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'{"id": "1635025720163", "hasCallback": false, "action": "get_instances", "http": {"80": "{\\n    \\"port\\": 80,\\n    \\"adapter\\": \\"127.0.0.1\\",\\n    \\"https\\": false\\n}"}, "socket": {"4444": {"handlers": [{"name": "get_instances", "function": "<function HitchManager.__init__.<locals>.get_instances_handler at 0x000001E477B93E50>"}, {"name": "delete_service", "function": "<function HitchManager.__init__.<locals>.delete_service at 0x000001E477BD0040>"}], "clients": {"fbfd74b6-344a-11ec-9022-b42e9935f70c": "<hitch.client.Client object at 0x000001E477BFD8E0>"}}}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<48 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"username":"admin","password":"password123","service_port":"4444","action":"delete_service","id":"1635025730089","hasCallback":false}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = data_received(<8 bytes>)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - state = CLOSING
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=8, data=b'\x03\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - event = eof_received()
+DEBUG:websockets.protocol:server x half-closing TCP connection
+DEBUG:websockets.protocol:server - event = connection_lost(None)
+DEBUG:websockets.protocol:server - state = CLOSED
+DEBUG:websockets.protocol:server x code = 1001, reason = [no reason]
+DEBUG:websockets.protocol:server - state = CONNECTING
+DEBUG:websockets.protocol:server - event = connection_made(<_ProactorSocketTransport fd=1204>)
+DEBUG:websockets.protocol:server - event = data_received(<787 bytes>)
+DEBUG:websockets.server:server < GET / HTTP/1.1
+DEBUG:websockets.server:server < Headers([('Host', '127.0.0.1:4444'), ('Connection', 'Upgrade'), ('Pragma', 'no-cache'), ('Cache-Control', 'no-cache'), ('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'), ('Upgrade', 'websocket'), ('Origin', 'http://127.0.0.1:5500'), ('Sec-WebSocket-Version', '13'), ('Accept-Encoding', 'gzip, deflate, br'), ('Accept-Language', 'en-US,en;q=0.9'), ('Cookie', 'csrftoken=cmqTFNH4YBUg2RJUCCO6J6ie3vecVuj7JuYMbm9wmCeGez1bovAeq7twBaCu76kj; FCCDCF=[null,null,["[[],[],[],[],null,null,true]",1618275712385]]; __gads=ID=4ae92beb10c26667-220b69953dc70030:T=1618597690:RT=1618597690:S=ALNI_MZk2tcoVJVo7qGocnXgq8L5rXxbmA; _ga=GA1.4.2077077477.1580287956'), ('Sec-WebSocket-Key', 'Z9vbgUkPQ79NXJMTrquTtA=='), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits')])
+DEBUG:websockets.server:server > HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:server > Headers([('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'Dw3ozkU2exSg4/Oa77iJLkJ8kA4='), ('Sec-WebSocket-Extensions', 'permessage-deflate'), ('Date', 'Sat, 23 Oct 2021 21:48:50 GMT'), ('Server', 'Python/3.9 websockets/8.1')])
+DEBUG:websockets.protocol:server - state = OPEN
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "C:\Users\ChADMIN\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "c:\Users\ChADMIN\Desktop\Hitch Socket Framework\src\hitch\server.py", line 11, in serverHandler
+    Macros.socket_servers[str(websocket.port)]['clients'][CLIENT.uuid] = CLIENT
+KeyError: '4444'
+DEBUG:websockets.protocol:server ! failing OPEN WebSocket connection with code 1011
+DEBUG:websockets.protocol:server - state = CLOSING
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=8, data=b'\x03\xf3', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server x half-closing TCP connection
+DEBUG:websockets.protocol:server - event = connection_lost(None)
+DEBUG:websockets.protocol:server - state = CLOSED
+DEBUG:websockets.protocol:server x code = 1006, reason = [no reason]
+DEBUG:websockets.protocol:server - state = CONNECTING
+DEBUG:websockets.protocol:server - event = connection_made(<_ProactorSocketTransport fd=1180>)
+DEBUG:websockets.protocol:server - event = data_received(<787 bytes>)
+DEBUG:websockets.server:server < GET / HTTP/1.1
+DEBUG:websockets.server:server < Headers([('Host', '127.0.0.1:4444'), ('Connection', 'Upgrade'), ('Pragma', 'no-cache'), ('Cache-Control', 'no-cache'), ('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'), ('Upgrade', 'websocket'), ('Origin', 'http://127.0.0.1:5500'), ('Sec-WebSocket-Version', '13'), ('Accept-Encoding', 'gzip, deflate, br'), ('Accept-Language', 'en-US,en;q=0.9'), ('Cookie', 'csrftoken=cmqTFNH4YBUg2RJUCCO6J6ie3vecVuj7JuYMbm9wmCeGez1bovAeq7twBaCu76kj; FCCDCF=[null,null,["[[],[],[],[],null,null,true]",1618275712385]]; __gads=ID=4ae92beb10c26667-220b69953dc70030:T=1618597690:RT=1618597690:S=ALNI_MZk2tcoVJVo7qGocnXgq8L5rXxbmA; _ga=GA1.4.2077077477.1580287956'), ('Sec-WebSocket-Key', 'dX7xWKVP0h7u8Pabih/DzQ=='), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits')])
+DEBUG:websockets.server:server > HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:server > Headers([('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'b5ocNwlecdZ7qkqgwLh08hHFKuU='), ('Sec-WebSocket-Extensions', 'permessage-deflate'), ('Date', 'Sat, 23 Oct 2021 21:48:52 GMT'), ('Server', 'Python/3.9 websockets/8.1')])
+DEBUG:websockets.protocol:server - state = OPEN
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "C:\Users\ChADMIN\AppData\Local\Programs\Python\Python39\lib\site-packages\websockets\server.py", line 191, in handler
+    await self.ws_handler(self, path)
+  File "c:\Users\ChADMIN\Desktop\Hitch Socket Framework\src\hitch\server.py", line 11, in serverHandler
+    Macros.socket_servers[str(websocket.port)]['clients'][CLIENT.uuid] = CLIENT
+KeyError: '4444'
+DEBUG:websockets.protocol:server ! failing OPEN WebSocket connection with code 1011
+DEBUG:websockets.protocol:server - state = CLOSING
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=8, data=b'\x03\xf3', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server x half-closing TCP connection
+DEBUG:websockets.protocol:server - event = connection_lost(None)
+DEBUG:websockets.protocol:server - state = CLOSED
+DEBUG:websockets.protocol:server x code = 1006, reason = [no reason]
+DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:asyncio:Using proactor: IocpProactor

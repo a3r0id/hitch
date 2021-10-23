@@ -11,6 +11,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="../js/hitch.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
@@ -20,9 +21,18 @@
         }
         th, td {
             border:1px solid rgba(0, 0, 0, 0.179);
+            padding: 1%;
         }
         .delete-server{
             cursor: pointer;
+        }
+        .logo{
+            float: right;
+            right: 5%;
+            position: relative;
+        }
+        .top-bar{
+            height: 25px;
         }
         </style>
     </head>
@@ -33,11 +43,10 @@
         <![endif]-->
 
 
-        <div class="w3-bar w3-black">
-            <a href="#" class="w3-bar-item w3-button">Home</a>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-            <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        <div class="w3-bar w3-black top-bar">
+            <a href="https://github.com/hostinfodev/hitch" target="_blank" style="left: 1%;position: relative;">
+            <i class="fa fa-github top-bar"></i></a>
+            <span class="logo font top-bar" style="border-left: 1px solid white;border-right: 1px solid white;">&nbsp;Hitch Server Manager&nbsp;</span>
         </div>
           
 
@@ -103,6 +112,7 @@
         
         <script>
             
+            // Todo: allow to choose port!
             let managerPort = 4444;
             let prefix      = "ws";
             let hitchClient = new HitchClient(`${prefix}://${location.hostname}:${managerPort}/`);
@@ -121,14 +131,16 @@
                     let handlers = "";
                     for (let l of v.handlers){
                         for (let [k2, v2] of Object.entries(l)){
-                            handlers += k2 + ": " + "<input disabled value=\"" + v2 + "\" style=\"width: 70%;\">" + "<br>";
+                            handlers += k2 + ": " + "<input disabled value=\"" + v2 + "\" style=\"width: 70%;\">" + "<br><br>";
                         }
+                        handlers += "<hr>";
                     }
 
                     let clients = "";
                     for (let [k3, v3] of Object.entries(v.clients)){
-                        clients += k3 + ": " + "<input disabled value=\"" + v3 + "\" style=\"width: 70%;\">" + "<br>";
+                        clients += k3 + ": " + "<input disabled value=\"" + v3 + "\" style=\"width: 70%;\">" + "<br><br>";
                     }
+                    clients += "<hr>";
 
                     $('#servers-socket').append(`<tr>
                     <td class=\"w3-center delete-server\" id=\"${k}\">❌</td>
@@ -146,7 +158,6 @@
                     $('#servers-http').append(`<tr>
                     <td class=\"w3-center delete-server\" id=\"${serverInfo.port}\">❌</td>
                     <td>${serverInfo.port}</td>
-                    <td>${k4}</td>
                     <td>${serverInfo.adapter}</td>
                     <td>${serverInfo.https}</td>
                     </tr>
@@ -163,5 +174,6 @@
             })
 
         </script>
+        <footer style="text-align: center;"> <u>2021 | Hitch Server Manager</u></footer>
     </body>
 </html>
