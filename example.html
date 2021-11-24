@@ -21,13 +21,16 @@
         <script>
             let hitchClient = new HitchClient("ws://" + location.hostname + ":8441/");
             document.getElementById("sub").onclick = () => {
+
                 let usersName = document.getElementById("name").value;
-                if (usersName.length > 1){
-                    hitchClient.send( "hello", data={
-                    name: usersName
-                    }, callback = (data) => {
+
+                let callback = (data) => {
                         alert(data.message)
-                    })
+                        // new info from server can be handled here.
+                    };
+
+                if (usersName.length > 1){
+                    hitchClient.send( "hello", data = {name: usersName}, callback = callback);
                 }
             };
         </script>
